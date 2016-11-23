@@ -126,6 +126,9 @@ class Parser {
       const token = this.peek();
 
       switch (token.type) {
+        case 'COMMENT':
+          nodes.push(this.parseComment());
+          break;
         default:
           throw new Error(`Unknown token type "${token.type}"`);
       }
@@ -134,6 +137,16 @@ class Parser {
     return {
       type: 'ROOT',
       nodes: nodes
+    };
+  }
+
+  parseComment() {
+    const comment = this.next();
+
+    return {
+      type: 'COMMENT',
+      value: comment.value.substring(1),
+      raw:   comment.value
     };
   }
 }
