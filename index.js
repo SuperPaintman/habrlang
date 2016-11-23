@@ -47,6 +47,9 @@ class Lexer {
         case ' ':
           i += this.tokenizeSpace(i);
           break;
+        case '#':
+          i += this.tokenizeComment(i);
+          break;
         default:
           throw new Error(`Unknown char ${JSON.stringify(char)}`);
       }
@@ -63,6 +66,29 @@ class Lexer {
   tokenizeSpace(index) {
     // skip spaces
     return 1;
+  }
+
+  tokenizeComment(index) {
+    const code = this.sliceCode(index);
+
+    let i = 0;
+    let char;
+
+    let comment = '';
+
+    while (char = code.charAt(i)) {
+      if ('\n' === char) {
+        break;
+      }
+
+      comment += char;
+
+      i++;
+    }
+
+    this.addToken('COMMENT', comment);
+
+    return i;
   }
 }
 
