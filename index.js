@@ -170,3 +170,11 @@ const tokens = lexer.tokenize();
 
 console.log('=== tokens ===');
 console.log(tokens);
+
+
+/** AST */
+const parser = new Parser(tokens);
+const ast = parser.parse();
+
+console.log('=== ast ===');
+console.log(ast);
