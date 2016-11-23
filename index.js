@@ -99,6 +99,14 @@ class Parser {
     this.i = 0;
     this._currentToken = null;
   }
+
+  peek() {
+    if (this._currentToken) {
+      return this._currentToken;
+    }
+
+    return this._currentToken = this.tokens[this.i];
+  }
 }
 
 class Compiler {}
