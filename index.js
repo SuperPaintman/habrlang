@@ -96,3 +96,12 @@ class Parser {}
 
 class Compiler {}
 
+
+/** Code */
+const code = `
+# Hello, habr
+## This is comment too
+`;
+
+console.log('=== code ===');
+console.log(code);
