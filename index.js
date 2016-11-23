@@ -5,6 +5,10 @@ class Token {
     this.type   = type;
     this.value  = value;
   }
+
+  inspect() {
+    return `[${this.type}:${JSON.stringify(this.value)}]`;
+  }
 }
 
 class Lexer {}
