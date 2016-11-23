@@ -118,6 +118,24 @@ class Parser {
   eof() {
     return !this.peek();
   }
+
+  parse() {
+    const nodes = [];
+
+    while (!this.eof()) {
+      const token = this.peek();
+
+      switch (token.type) {
+        default:
+          throw new Error(`Unknown token type "${token.type}"`);
+      }
+    }
+
+    return {
+      type: 'ROOT',
+      nodes: nodes
+    };
+  }
 }
 
 class Compiler {}
