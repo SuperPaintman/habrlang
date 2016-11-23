@@ -92,7 +92,14 @@ class Lexer {
   }
 }
 
-class Parser {}
+class Parser {
+  constructor(tokens) {
+    this.tokens = tokens;
+
+    this.i = 0;
+    this._currentToken = null;
+  }
+}
 
 class Compiler {}
 
