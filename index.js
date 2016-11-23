@@ -107,6 +107,13 @@ class Parser {
 
     return this._currentToken = this.tokens[this.i];
   }
+
+  next() {
+    const token = this.peek();
+    this.i++;
+    this._currentToken = null;
+    return token;
+  }
 }
 
 class Compiler {}
