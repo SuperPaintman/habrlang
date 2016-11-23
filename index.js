@@ -151,7 +151,11 @@ class Parser {
   }
 }
 
-class Compiler {}
+class Compiler {
+  constructor(ast) {
+    this.ast = ast;
+  }
+}
 
 
 /** Code */
