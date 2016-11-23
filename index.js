@@ -155,6 +155,19 @@ class Compiler {
   constructor(ast) {
     this.ast = ast;
   }
+
+  compile() {
+    let result = '';
+
+    for (let node of this.ast.nodes) {
+      switch (node.type) {
+        default:
+          throw new Error(`Unknown node type "${node.type}"`);
+      }
+    }
+
+    return result;
+  }
 }
 
 
