@@ -11,7 +11,13 @@ class Token {
   }
 }
 
-class Lexer {}
+class Lexer {
+  constructor(code) {
+    this.code   = code;
+
+    this.tokens = [];
+  }
+}
 
 class Parser {}
 
