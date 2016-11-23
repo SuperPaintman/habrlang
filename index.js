@@ -24,6 +24,12 @@ class Lexer {
     return this;
   }
 
+  addToken(type, value) {
+    this.tokens.push(new Token(type, value));
+
+    return this;
+  }
+
   tokenize() {
     this.reset();
 
