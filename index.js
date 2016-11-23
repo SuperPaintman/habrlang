@@ -202,3 +202,11 @@ const ast = parser.parse();
 
 console.log('=== ast ===');
 console.log(ast);
+
+
+/** Result */
+const compiler = new Compiler(ast);
+const result = compiler.compile();
+
+console.log('=== result ===');
+console.log(result);
