@@ -105,3 +105,11 @@ const code = `
 
 console.log('=== code ===');
 console.log(code);
+
+
+/** Tokens */
+const lexer = new Lexer(code);
+const tokens = lexer.tokenize();
+
+console.log('=== tokens ===');
+console.log(tokens);
