@@ -31,12 +31,20 @@ class Lexer {
     let i = 0;
     while (char = this.code.charAt(i)) {
       switch (char) {
+        case '\n':
+          i += this.tokenizeNewline(i);
+          break;
         default:
           throw new Error(`Unknown char ${JSON.stringify(char)}`);
       }
     }
 
     return this.tokens;
+  }
+
+  tokenizeNewline(index) {
+    // skip newlines
+    return 1;
   }
 }
 
