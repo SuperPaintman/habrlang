@@ -161,12 +161,19 @@ class Compiler {
 
     for (let node of this.ast.nodes) {
       switch (node.type) {
+        case 'COMMENT':
+          result += this.compileComment(node) + '\n';
+          break;
         default:
           throw new Error(`Unknown node type "${node.type}"`);
       }
     }
 
     return result;
+  }
+
+  compileComment(node) {
+    return `//${node.value}`;
   }
 }
 
