@@ -114,6 +114,10 @@ class Parser {
     this._currentToken = null;
     return token;
   }
+
+  eof() {
+    return !this.peek();
+  }
 }
 
 class Compiler {}
