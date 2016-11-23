@@ -30,6 +30,10 @@ class Lexer {
     return this;
   }
 
+  sliceCode(i) {
+    return this.code.slice(i);
+  }
+
   tokenize() {
     this.reset();
 
