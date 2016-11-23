@@ -17,6 +17,12 @@ class Lexer {
 
     this.tokens = [];
   }
+
+  reset() {
+    this.tokens = [];
+
+    return this;
+  }
 }
 
 class Parser {}
