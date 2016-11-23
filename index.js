@@ -34,6 +34,9 @@ class Lexer {
         case '\n':
           i += this.tokenizeNewline(i);
           break;
+        case ' ':
+          i += this.tokenizeSpace(i);
+          break;
         default:
           throw new Error(`Unknown char ${JSON.stringify(char)}`);
       }
@@ -44,6 +47,11 @@ class Lexer {
 
   tokenizeNewline(index) {
     // skip newlines
+    return 1;
+  }
+
+  tokenizeSpace(index) {
+    // skip spaces
     return 1;
   }
 }
